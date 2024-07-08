@@ -1,0 +1,1 @@
+{"name":"Local: 2751_수정렬하기2_shellsort","url":"/Users/johyeong-ug/study/jungle/baekjoon/2751_수정렬하기2_shellsort.py","tests":[{"id":1720421692634,"input":"5\n5\n4\n3\n2\n1","output":"1\n2\n3\n4\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/2751_수정렬하기2_shellsort.py","group":"local","local":true}
