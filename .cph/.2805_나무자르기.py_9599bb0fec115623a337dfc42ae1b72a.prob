@@ -1,0 +1,1 @@
+{"name":"Local: 2805_나무자르기","url":"/Users/johyeong-ug/study/jungle/baekjoon/2805_나무자르기.py","tests":[{"id":1720537131528,"input":"4 7\n20 15 10 17","output":"15"},{"id":1720539414565,"input":"5 20\n4 42 40 26 46","output":"36"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/2805_나무자르기.py","group":"local","local":true}

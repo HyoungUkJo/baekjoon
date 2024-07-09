@@ -22,29 +22,23 @@
 
 
 """
-N,M = int(input().split())
-
-tree = []
-
-for i in range(N):
-    tree.append(int(input()))
-
+N,M = map(int,input().split())
+tree = list(map(int,input().split()))
 tree.sort()
 
-top = (1+max(tree))//2
+low, high = 0, max(tree)
+top = (low + high) // 2
 
-
-branch=0
-
-for i in tree :
-    if i < top : continue
-    branch += i - tree
-    
-    if branch > M :
-        top +=1
-
-if branch == M :
-    print(top)
-elif branch < M :
-    top +=1
+while low <= high :
+    branch=0
+    # print(top)
+    for i in tree :        
+        if i > top:
+            branch += i - top
         
+    if branch >= M :
+        low = top +1
+    else:
+        high = top -1
+
+print(high)
