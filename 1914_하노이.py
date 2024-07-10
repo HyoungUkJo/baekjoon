@@ -1,38 +1,37 @@
 """ 
+하노이탑풀이
+1. 현재 내 위치를 확인 할 줄알아야함.
+2. 나는 결국은 통으로 위에 있는 친구들을 옮겨야함.
+3. 재귀로 스택에 print가 쌓아지는 방식으로 가보자
 
-문제 푸는중...
+"""
 
- """
+def hano(no,now,after) :
 
-def hano (n) :
-    if (n==1) :
-        return n
-    else:
-        return 2**(n-1)+hano(n-1)
+    if no >1 :
+        hano(no-1, now,6-now-after)
     
-N = int(input())
-if N >= 20 :
-    print(hano(N))
+    # print(f'{no}번째 원반 {now}에서 {after}로 이동')
+    print(now,after)
+    
+    if no >1 :
+        hano(no-1, 6-now-after,after)
 
-    # 내가 N일때 내 위치가 1이면
-    #N-1은 2로가 나는 3으로갈게
-# 내 위치가 2이면
-    #N-1은 1로가 나는 3으로 갈게
+def hano_culc(n) :
+    if n ==1:
+        return n
+    elif n>1:
+        return hano_culc(n-1)*2+1
+    
+N= int(input())
+
+if N>20 :
+    print(hano_culc(N))
+    # print(2**(N)-1)
+else:
+    # print(2**(N)-1)
+    print(hano_culc(N))
+    hano(N,1,3)
+    
 
 
-def move(n,now):
-    if n >1 :
-        after = 3-now
-        if now ==1 :
-            move(n-1,now=after)
-        elif now ==2 :
-            move(n-1, now=after)
-            
-        print("%d번블록 %d에서 %d으로 이동" %(n,now,after))        
-
-
-    if n==1:
-        print("1번블록 %d번으로 이동 ")
-
-N=int(input())
-print(move(N,1))    

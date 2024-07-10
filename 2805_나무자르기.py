@@ -27,9 +27,9 @@ tree = list(map(int,input().split()))
 tree.sort()
 
 low, high = 0, max(tree)
-top = (low + high) // 2
 
 while low <= high :
+    top = (low + high) // 2
     branch=0
     # print(top)
     for i in tree :        
