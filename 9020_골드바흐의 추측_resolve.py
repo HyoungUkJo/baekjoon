@@ -6,6 +6,9 @@
 # 
 
 # 에라토스테네스의 채 알고리즘
+
+import sys
+input=sys.stdin.readline
 def isPrime(a):
   if a < 2:
     return False
@@ -23,12 +26,13 @@ def savePrimes(num) :
 
 def findPrime(num,prime):
     mid = len(prime)//2
-    result = 0
-    while result <= 0 :
-        key = prime[mid]
-        result = num - key
-        mid+=1
-    print(key, result)
+    for i in range(mid, -1, -1):
+      for j in range(mid, len(prime)):
+        if prime[i] + prime[j] == num :
+            print(prime[i],prime[j])
+            return
+        if prime[i] + prime[j] >= num :
+            break
 
 N=int(input())
 arr = []
@@ -38,7 +42,7 @@ for i in range(N) :
 
 for i in range(N):
   prime_arr = savePrimes(arr[i])
-  findPrime(N,prime_arr)
+  findPrime(arr[i],prime_arr)
 
 
 
