@@ -58,10 +58,46 @@ M은 0,1,2,3 값중 하나
 
 
 """
+#######
+""" 
+0. 깊이 우선탐색 기법을 이용한다.
+1. 첫번째 배열의 첫번째 값으로 이동한다.
+ -> a[i][i] 
+2. 두번째 배열에서 첫번째 값으로 이동한다.
+ -> a[j][i]
+3. 세번째 배열에서 첫번째 값으로 이동한다.
+4. 네번째 배열에서 첫번째 값으로 이동한다.
+4.1. 네번째 값이 가장 작은 값이라면 지금까지의 코스트 저장 
+"""
+#######
 
-# 입력 받기
+def dfs(arr,visited,current,value):
+    global cost
+    # print("current",current)
+    if value > cost : 
+        # print("value:",value)
+        return
+    if len(visited) == len(arr):
+        return
+    if len(visited) < len(arr)-1 :
+        for i in range(1,N) :
+            if i not in visited and i!= current:
+                value += a[current][i]
+                visited.append(current)
+                print(f'visited contiy :{visited} current:{current} move to {i} cost is {value}')
+                dfs(arr,visited,i,value)
+            if value < cost :
+                cost = value
+                # print("cost",cost)
+                # print("i",i)
+        return cost
+    else : dfs(arr,visited,0,value)
+
+
 N = int(input())
-graph = []
-for _ in range(N):
-    graph.append(list(map(int, input().split())))
+a = [list(map(int, input().split()))for _ in range(N)]
+visited = []
+value = 0
+cost = 100
+dfs(a,visited,0,value)
 

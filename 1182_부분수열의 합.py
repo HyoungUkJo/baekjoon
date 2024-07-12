@@ -9,25 +9,32 @@
 # mid 값을 기준으로 해서 본인이 S 보다 크면 rigt를 mid로 해서 하나씩 더해보는것?
 # 본인이 작으면 left를 mid로 해서 비교할것
 # 첫번째 
-def sum_jegui(a,S,n) :
+def sum_jegui(summ,a,S,n) :
     # 값 두개끼리 비교했을떄 같으면 리턴 1 못찾으면 0
     #값 3개끼리 비교했을떄
     # 값 4개끼리 비교했을떄 ~~~~~~~~
-    if n < 0 : return 0
-
-    else : a[n] + 
-
-    if a[i]+a[j]==S:
-        a.pop(a[i])
-        a.pop(a[j])
-
+    global count
+    summ+=a[n]
+    if summ==S:
+        count+=1
+    if n == (len(a)-1) :
+        print(count)
+        return summ
+    else :
+        sum_jegui(summ,a,S,n+1)
 
 NS = list(map(int,input().split()))
 N=NS[0]
 S=NS[1]
 
-oneso = list(map(int,input().split()))
-oneso.sort()
+onseo = list(map(int, input().split()))
+# oneso.sort()
+count=0
+
+for i in range(len(onseo)-1):
+    summ=0
+    sum_jegui(summ,onseo,S,i+1)
+
 """ 
 # 이진 탐색?
 left = 0
@@ -37,9 +44,3 @@ while left <= right:
 
     if mid < S :
         left = """
-
-
-
-for i in range(len(oneso)):
-    for j in range(i,len(oneso)):
-        oneso[]
