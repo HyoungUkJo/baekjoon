@@ -1,0 +1,1 @@
+{"name":"Local: 1991_트리순회","url":"/Users/johyeong-ug/study/jungle/baekjoon/1991_트리순회.py","tests":[{"id":1720852981143,"input":"7\nA B C\nB D .\nC E F\nE . .\nF . G\nD . .\nG . .","output":"ABDCEFG\nDBAECFG\nDBEGFCA"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/1991_트리순회.py","group":"local","local":true}

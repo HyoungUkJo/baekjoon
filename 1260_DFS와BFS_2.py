@@ -28,7 +28,7 @@ def bfs(now):
     queue = deque([now])
     visited[now]=1
     while queue:
-        curr_node = queue.popleft()
+        curr_node = queue.popleft() 
         print(curr_node+1, end=" ")
         for i in range(N):
             if visited[i]==0 and graph[curr_node][i]==1:
