@@ -19,5 +19,61 @@
 첫번째 줄은 정점의 수와 간선의 갯수 (V,E)
 두번째 줄부터 간선 정보
 A(정점) B(정점) C(가중치)
+3 3
+1 2 1 : 1->2 로가는 가중치 1
+2 3 2 : 2->3 로가는 가중치 2
+1 3 3 : 1->3 로가는 가중치 3
 """
 
+""" 
+저장해야하는 값
+1.각 정점끼리 길이 있는지
+2.각 정점간의 비용이 얼마인지
+3. 몇번 반복했는지.
+
+
+데이터를 어떻게 저장하고 어떻게 비교할지 생각해야함.
+1. 딕셔너리 형태로 받아온다.
+2. 2D array형식으로 받는다.
+
+정점의 크기만큼 테이블을 만든다. [x][y]처럼..
+해당 점점으로 갈때 값이 있는지 없는지 비교
+
+"""
+
+def dfs(now,temp_cost,depth):
+        
+    global cost
+
+    if depth == V-1:
+        if temp_cost < cost :
+            cost = temp_cost
+            return
+    
+    if temp_cost >= cost :
+        return
+
+    for i in range(1,V):
+        # print("temp_cost",temp_cost)
+        if visited[i]==False and graph[now][i] !=0 :
+            visited[i]=True
+            dfs(i,graph[now][i]+temp_cost,depth+1)
+            visited[i]=False
+
+
+V, M = map(int,input().split())
+
+graph = [[0]*V for _ in range(V)]
+visited = [False] *V
+cost = float('inf')
+temp_cost = 0
+depth = 0
+
+
+for i in range(M):
+    x,y,E = map(int,input().split())
+    graph[x-1][y-1] = E
+    graph[y-1][x-1] = E
+
+dfs(0,0,0)
+print(cost)
