@@ -13,7 +13,7 @@ dfs 에서 비교연산을 같이 해버린다면?????
 
 """
 import sys
-sys.setrecursionlimit(10**9)
+sys.setrecursionlimit(10**6)
 input=sys.stdin.readline
 
 def dfs(start, group):
