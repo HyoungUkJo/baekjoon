@@ -1,0 +1,1 @@
+{"name":"Local: 1197_최소스패닝트리_kruskal","url":"/Users/johyeong-ug/study/jungle/baekjoon/1197_최소스패닝트리_kruskal.py","tests":[{"id":1721027017900,"input":"3 3\n1 2 1\n2 3 2\n1 3 3","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/1197_최소스패닝트리_kruskal.py","group":"local","local":true}

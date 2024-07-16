@@ -1,0 +1,1 @@
+{"name":"Local: 18352특정거리의 도시찾기","url":"/Users/johyeong-ug/study/jungle/baekjoon/18352특정거리의 도시찾기.py","tests":[{"id":1721094629562,"input":"4 4 2 1\n1 2\n1 3\n2 3\n2 4","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/18352특정거리의 도시찾기.py","group":"local","local":true}
