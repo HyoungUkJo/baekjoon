@@ -10,8 +10,8 @@ def bfs(start_x, start_y, graph):
     dy = [0,0,-1,1]
 
     queue = deque([(start_x,start_y)])
-    visited = set([(start_x,start_y)])
-    print("firstQ",)
+    visited = [[False]*M for _ in range(N)]
+    visited[start_x][start_y]=True
     while queue:
         x, y = queue.popleft()
 
@@ -19,16 +19,20 @@ def bfs(start_x, start_y, graph):
             nx = x+dx[i]
             ny = y+dy[i]
 
-        if 0<=nx<len(graph) and 0<= ny < len(graph[0]):
-            if (nx,ny) not in visited and graph[nx][ny]!=0:
-                visited.add((nx,ny))
-                queue.append((nx,ny))
-                count+=1
+            if 0<=nx<len(graph) and 0<= ny < len(graph[0]):
+                if not visited[nx][ny] and graph[nx][ny]==1:
+                    visited[nx][ny]=True
+                    count+=1
+                    queue.append((nx,ny))
+                    if nx == N - 1 and ny == M - 1:
+                        return count
     return count
     
 
 N,M = map(int,input().split())
 # split이 아니라 strip으로 각 자리를 다 쪼개서 리스트로 보낸다.
-map = [list(map(int, input().strip())) for _ in range(N)]
+maze = [list(map(int, input().strip())) for _ in range(N)]
 # print(map)
-bfs(0,0,map)
+result = bfs(0,0,maze)
+
+print(result)
