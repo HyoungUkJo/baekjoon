@@ -24,7 +24,7 @@ T = int(input())
 for _ in range(T):
     N = int(input())
     coins = list(map(int,input().split())) 
-    coins.insert(0,0)
+    coins.insert(0,0) #인덱스와 위치를 같게 해주기 위해
     M = int(input())
 
     # 최대값을 계산/저장할 DP테이블 생성(초기화)
@@ -35,7 +35,7 @@ for _ in range(T):
         for j in range(1,M+1):
             # 동전으로 만들 수 있는 가지수를 구하는거임으로 앞에서 계산한 가지수를 배껴와야한다.
             dp[i][j] = dp[i-1][j]
-            # 만약 동전값과 j에 들어있는 값이 0보다 클 경우 그 차이의 수를 넣어준다.
+            # 만약 동전값과 j에 들어있는 값이 0보다 클 경우 그 차이의 인덱스의 값과 지금 내가 가지고 있는 값을 합한다.
             if j-coins[i] >=0 :
                 dp[i][j] += dp[i][j-coins[i]]
     print(dp[N][M])
