@@ -1,0 +1,1 @@
+{"name":"Local: 9084_동전","url":"/Users/johyeong-ug/study/jungle/baekjoon/week03/9084_동전.py","tests":[{"id":1721399392732,"input":"3\n2\n1 2\n1000\n3\n1 5 10\n100\n2\n5 7\n22","output":"501\n121\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/week03/9084_동전.py","group":"local","local":true}
