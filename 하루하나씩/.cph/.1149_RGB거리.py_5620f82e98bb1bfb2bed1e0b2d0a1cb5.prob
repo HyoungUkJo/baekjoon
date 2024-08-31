@@ -1,0 +1,1 @@
+{"name":"Local: 1149_RGB거리","url":"/Users/johyeong-ug/study/jungle/baekjoon/하루하나씩/1149_RGB거리.py","tests":[{"id":1725066645192,"input":"3\n26 40 83\n49 60 57\n13 89 99","output":"96"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/하루하나씩/1149_RGB거리.py","group":"local","local":true}
