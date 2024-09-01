@@ -1,12 +1,14 @@
-n = int(input())
-a = [0]*n
+N= int(input())
+arr=[]
+for _ in range(N):
+    arr.append(list(map(int,input().split())))
 
-for i in range(n):
-    a[i] = list(map(int,input().split()))
-    
-for i in range(1,n): 
-    a[i][0]= min(a[i-1][1],a[i-1][2]) + a[i][0]
-    a[i][1]= min(a[i-1][0],a[i-1][2]) + a[i][1]
-    a[i][2]= min(a[i-1][0],a[i-1][1]) + a[i][2]
+dp = [[0]*3 for _ in range(N)]
+dp[0]=arr[0]
+for i in range(1,N):
+    dp[i][0]=arr[i][0]+min(dp[i-1][1],dp[i-1][2])
+    dp[i][1]=arr[i][1]+min(dp[i-1][0],dp[i-1][2])
+    dp[i][2]=arr[i][2]+min(dp[i-1][0],dp[i-1][1])
 
-print(min(a[n-1][0],a[n-1][1],a[n-1][2]))
+# print(dp)
+print(min(dp[N-1]))
