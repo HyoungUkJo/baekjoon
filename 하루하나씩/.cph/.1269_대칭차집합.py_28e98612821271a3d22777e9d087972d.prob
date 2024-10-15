@@ -1,0 +1,1 @@
+{"name":"Local: 1269_대칭차집합","url":"/Users/johyeong-ug/study/jungle/baekjoon/하루하나씩/1269_대칭차집합.py","tests":[{"id":1728955975903,"input":"3 5\n1 2 4\n2 3 4 5 6","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/johyeong-ug/study/jungle/baekjoon/하루하나씩/1269_대칭차집합.py","group":"local","local":true}
