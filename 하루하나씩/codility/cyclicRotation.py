@@ -1,6 +1,6 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
-
+# https://app.codility.com/demo/results/training9VQNFK-Y7Y/
 def cycle(A):
     tempNum = A[-1]
     for i in range(len(A)-1,0,-1):
